@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin panel</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>admin panel</h1>
+    <a href="/addpost"> <button>torna indietro</button></a>
+
+    <% if(adminPanelPosts){ %> <% adminPanelPosts.forEach(adminPanelPost =>{ %>
+
+    <div class="admin-panel-post-container">
+      <h3><%= adminPanelPost.id %></h3>
+      <h3><%= adminPanelPost.titolo %></h3>
+      <h3><%= adminPanelPost.data %></h3>
+      <a href="/admin/modifica/<%=adminPanelPost.id %>"
+        ><button>modifica</button></a
+      >
+    </div>
+    <% })}%>
+  </body>
+</html>

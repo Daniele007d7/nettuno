@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aggiungi un post</title>
+  </head>
+  <body>
+    <h1>Scrivi un nuovo post</h1>
+    <a href="/homepage">
+      <button>homepage</button>
+    </a>
+    <form action="/addpost" enctype="multipart/form-data" method="POST">
+      <label>titolo</label>
+      <input type="text" name="titolo" />
+      <label>data</label>
+      <input type="date" name="data" />
+      <label>testo</label>
+      <input type="text" name="testo" />
+      <label>foto</label>
+      <input
+        type="file"
+        name="foto"
+        accept=".jpg, .jpeg, .png, .heic"
+        multiple
+      />
+      <button>submit</button>
+    </form>
+    <% if(datomancante){ %>
+    <h1><%= datomancante%></h1>
+    <% } %>
+
+    <a href="/admin/panel">
+      <button>admin panel</button>
+    </a>
+  </body>
+</html>

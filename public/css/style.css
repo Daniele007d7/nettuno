@@ -1,0 +1,38 @@
+.homepage-post-container {
+  background-color: rgb(211, 211, 141);
+  margin: 20px, 0px 10px 10px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.immagini {
+  width: 20vw;
+  height: auto;
+}
+
+.homepage-post-container:hover {
+  background-color: rgb(218, 218, 108);
+  transition: 500ms;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.admin-panel-post-container {
+  background-color: bisque;
+}
+
+.imgContainer-single-post {
+  display: flex;
+}
+
+.imgCompletePost {
+  width: 30vh;
+  height: auto;
+}

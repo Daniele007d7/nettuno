@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <h1>Homepage</h1>
+
+    <a href="./admin/login">
+      <button>
+        <% if(req.session.authorized){ %> <%="gestisci"%> <%} else{ %>
+        <%="login"%> <% } %>
+      </button></a
+    >
+
+    <h2>Post</h2>
+    <h1>tutti i post!</h1>
+
+    <% if(completo){ %> <% completo.forEach(blog =>{ %>
+    <a href="/blog/<%= blog.id  %>">
+      <div class="homepage-post-container" id="<%= blog.id %>">
+        <h3><%=blog.titolo %></h3>
+        <h3><%=blog.testo %></h3>
+        <h3><%=blog.data %></h3>
+        <div class="imgContainer">
+          <% blog.path.forEach(image =>{ %> <img class="immagini" src="<%=
+          ("/",image) %>" /> <% }) %>
+        </div>
+      </div>
+    </a>
+    <%})} %>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modifica blog</title>
+  </head>
+  <body>
+    <form action="/admin/modifica/<%= id %>" method="POST">
+      <h1>modifica</h1>
+      <h3>post n. <%= id %></h3>
+      <label>data</label>
+      <input type="date" value="<%= data %>" name="data" />
+      <label>titolo</label>
+      <input type="text" value="<%= titolo %>" name="titolo" />
+      <label> testo</label>
+      <textarea name="testo"><%= testo %></textarea>
+      <button>applica</button>
+    </form>
+    <button class="removeBtn" data-doc="<%= id %>">cancella post</button>
+
+    <script>
+      const removePost = document.querySelector(".removeBtn");
+      removePost.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const confirmDelete = confirm("Sei sicuro che vuoi cancellarlo?");
+
+        if (confirmDelete) {
+          fetch(`/admin/modifica/${removePost.dataset.doc}`, {
+            method: "DELETE",
+          })
+            .then((response) => {
+              if (response) {
+                return response.json();
+              }
+            })
+            .then((data) => {
+              console.log(data);
+              console.log(typeof data);
+              window.location.href = data.redirect;
+            })
+
+            .catch((err) => console.log(err));
+        }
+      });
+    </script>
+  </body>
+</html>
