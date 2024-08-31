@@ -8,7 +8,26 @@
   </head>
 
   <body>
-    <h1>Homepage</h1>
+    <div id="title-img">
+      <h1 id="nettuno-scacchi">NETTUNO SCACCHI</h1>
+      <img
+        src="https://pbs.twimg.com/profile_images/378800000344267493/b63be7b04b2b0cb41ce91fa9aa67e7e3.jpeg"
+        alt=""
+        id="logo"
+      />
+    </div>
+
+    <div id="header-container">
+      <div class="info">
+        <h1 class="info-text">CHI SIAMO</h1>
+      </div>
+      <div class="info">
+        <H1 class="info-text">DOVE SIAMO</H1>
+      </div>
+      <div class="info">
+        <h1 class="info-text">ORARI DI APERTURA</h1>
+      </div>
+    </div>
 
     <a href="./admin/login">
       <button>
@@ -18,14 +37,13 @@
     >
 
     <h2>Post</h2>
-    <h1>tutti i post!</h1>
 
     <% if(completo){ %> <% completo.forEach(blog =>{ %>
     <a href="/blog/<%= blog.id  %>">
       <div class="homepage-post-container" id="<%= blog.id %>">
-        <h3><%=blog.titolo %></h3>
-        <h3><%=blog.testo %></h3>
-        <h3><%=blog.data %></h3>
+        <h3 class="titolo-post"><%=blog.titolo %></h3>
+        <h3 class="testo-post"><%=blog.testo %></h3>
+        <h3 class="data-post"><%=blog.data %></h3>
         <div class="imgContainer">
           <% blog.path.forEach(image =>{ %> <img class="immagini" src="<%=
           ("/",image) %>" /> <% }) %>

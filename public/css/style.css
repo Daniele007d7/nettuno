@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  background-color: whitesmoke;
+}
+
 .homepage-post-container {
-  background-color: rgb(211, 211, 141);
+  background-color: rgb(214, 214, 212);
   margin: 20px, 0px 10px 10px;
+  width: 800px;
+  margin: auto;
+  border: solid 3px black;
 }
 
 .imgContainer {
@@ -14,7 +23,7 @@
 }
 
 .homepage-post-container:hover {
-  background-color: rgb(218, 218, 108);
+  background-color: rgb(203, 203, 176);
   transition: 500ms;
   cursor: pointer;
 }
@@ -35,4 +44,62 @@ a {
 .imgCompletePost {
   width: 30vh;
   height: auto;
+}
+
+#nettuno-scacchi {
+  color: #03045e;
+
+  font-weight: 900;
+  font-size: 100px;
+  font-family: "Poppins";
+  text-align: center;
+  margin: 30px 0px 0px 50px;
+}
+
+#header-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-left: 50px;
+  position: relative;
+  bottom: 40px;
+}
+
+.info {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 20px;
+  border: solid 7px #00b4d8;
+  padding: 0px 14px 0px 14px;
+}
+
+.info-text {
+  margin: 0px;
+}
+
+#title-img {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 210px;
+  height: 210;
+  margin: 20px 55px 25px 0px;
+  border-radius: 20%;
+}
+
+.titolo-post {
+  font-family: "Poppins";
+  font-size: 40px;
+  padding: 10px;
+  text-align: center;
+}
+
+.testo-post,
+.data-post {
+  font-family: "Poppins";
+  font-size: 20px;
+  padding: 0px 25px 10px 25px;
+  color: rgb(44, 44, 44);
 }
