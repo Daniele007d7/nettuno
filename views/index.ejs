@@ -28,33 +28,75 @@
         <h1 class="info-text">ORARI DI APERTURA</h1>
       </div>
     </div>
-    <div id="all-post-container">
-      <h2 id="ultime-notizie">ULTIME NOTIZIE</h2>
-      <% if(completo){ %> <% completo.forEach(blog =>{ %>
-      <a href="/blog/<%= blog.id  %>">
-        <div class="homepage-post-container" id="<%= blog.id %>">
-          <div class="img-title">
-            <% blog.path.forEach(image =>{ %> <img class="immagini" src="<%=
-            ("/",image) %>" /> <% }) %>
-            <div class="titolo-testo">
-              <h3 class="titolo-post"><%=blog.titolo %></h3>
 
-              <h3 class="testo-post"><%=blog.testo.slice(0,100) + "..." %></h3>
+    <div id="page-container">
+      <div id="left">
+        <div id="all-post-container">
+          <h2 id="ultime-notizie">ULTIME NOTIZIE</h2>
+          <% if(completo){ %>
+
+          <a href="/blog/<%= completo[0].id  %>">
+            <div class="homepage-post-container" id="<%= completo[0].id %>">
+              <div class="img-title">
+                <img
+                  class="immagini"
+                  src="<%=
+                       completo[0].path %>"
+                />
+
+                <h3 class="titolo-post"><%=completo[0].titolo %></h3>
+              </div>
+              <h3 class="testo-post">
+                <%=completo[0].testo.slice(0,140) + "..." %>
+              </h3>
+
+              <h3 class="data-post"><%=completo[0].data %></h3>
             </div>
+          </a>
+          <%} %>
+
+          <div class="old-post-container">
+            <% if(oldPost){ %> <% oldPost.forEach((post =>{ %>
+            <div class="old-post">
+              <div class="old-post-img-container">
+                <img class="old-post-img" src="<%=post.path%>" alt="" />
+              </div>
+
+              <div class="old-post-testo"><%= post.titolo %></div>
+            </div>
+            <% }))} %>
           </div>
 
-          <h3 class="data-post"><%=blog.data %></h3>
-          <div class="imgContainer"></div>
+          <a href="./admin/login">
+            <button>
+              <% if(req.session.authorized){ %> <%="gestisci"%> <%} else{ %>
+              <%="login"%> <% } %>
+            </button></a
+          >
         </div>
-      </a>
-      <%})} %>
+      </div>
+      <div id="right">
+        <div id="puzzle">
+          <div id="puzzle-container">
+            <link
+              id="puzzleCss"
+              type="text/css"
+              rel="stylesheet"
+              href="https://chesstempo.com/css/dailypuzzle.css"
+            />
+            <script
+              type="text/javascript"
+              src="https://chesstempo.com/js/dailypuzzle.js"
+            ></script>
+            <script>
+              new Puzzle({ pieceSize: 29 });
+            </script>
+          </div>
+          <a id="ct-link" href="https://chesstempo.com/play-chess-online/"
+            >Gioca a Scacchi Online</a
+          >
+        </div>
+      </div>
     </div>
-
-    <a href="./admin/login">
-      <button>
-        <% if(req.session.authorized){ %> <%="gestisci"%> <%} else{ %>
-        <%="login"%> <% } %>
-      </button></a
-    >
   </body>
 </html>

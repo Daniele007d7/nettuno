@@ -71,9 +71,11 @@ app.get("/homepage", async (req, res) => {
         path,
       };
     });
-    console.log(completo);
+    const oldPost = completo.slice(1, 7);
+    console.log(oldPost);
+    //console.log("questo è completo", completo);
 
-    res.render("index", { completo, req });
+    res.render("index", { completo, oldPost, req });
   } catch (err) {
     console.log(err);
   }
@@ -88,7 +90,7 @@ app.get("/blog/:id", async (req, res) => {
     const [imagesPath] = await pool.execute("SELECT * FROM image WHERE id=?", [
       id,
     ]);
-    console.log(imagesPath);
+    //console.log(imagesPath);
 
     let path = imagesPath.map((idPath) => {
       let correctedPath = idPath.path.replaceAll("\\", "/");
@@ -96,7 +98,7 @@ app.get("/blog/:id", async (req, res) => {
 
       return correctedPath;
     });
-    console.log("questo è path", path);
+    //console.log("questo è path", path);
 
     res.render("blog", {
       path,
