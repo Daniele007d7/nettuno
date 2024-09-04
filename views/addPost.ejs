@@ -4,34 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aggiungi un post</title>
+    <link rel="stylesheet" href="/css/addpost.css" />
   </head>
   <body>
-    <h1>Scrivi un nuovo post</h1>
-    <a href="/homepage">
-      <button>homepage</button>
-    </a>
+    <div id="header-container">
+      <a href="/homepage"
+        ><button class="addpost-button">← HOMEPAGE</button>
+      </a>
+      <h1 id="addpost-title">SCRIVI UN NUOVO POST</h1>
+
+      <a href="/admin/panel">
+        <button class="addpost-button">ADMIN PANEL →</button>
+      </a>
+    </div>
+    <% if(datomancante){ %>
+    <h1 id="datomancante"><%= datomancante%></h1>
+    <% } %>
     <form action="/addpost" enctype="multipart/form-data" method="POST">
       <label>titolo</label>
-      <input type="text" name="titolo" />
+      <input type="text" name="titolo" class="input" />
       <label>data</label>
-      <input type="date" name="data" />
+      <input type="date" name="data" class="input" />
       <label>testo</label>
-      <input type="text" name="testo" />
+      <textarea name="testo" class="input"></textarea>
+
       <label>foto</label>
       <input
         type="file"
         name="foto"
         accept=".jpg, .jpeg, .png, .heic, .jfif"
         multiple
+        class="input"
       />
-      <button>submit</button>
+      <button class="input">submit</button>
     </form>
-    <% if(datomancante){ %>
-    <h1><%= datomancante%></h1>
-    <% } %>
-
-    <a href="/admin/panel">
-      <button>admin panel</button>
-    </a>
   </body>
 </html>

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+#header-container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+#addpost-title {
+  justify-content: center;
+  margin: auto;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 48px;
+  color: #03045e;
+}
+
+#datomancante {
+  font-family: "Helvetica";
+  text-align: center;
+  font-size: 32px;
+  color: #c1121f;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  font-family: "Poppins";
+  font-size: 28px;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+}
+
+.input {
+  margin-bottom: 35px;
+  font-size: 22px;
+  font-family: "Poppins";
+}
+
+.addpost-button {
+  padding: 7px;
+  font-family: "Poppins";
+  font-size: 20px;
+  color: antiquewhite;
+  background-color: #0077b6;
+  border: none;
+  border-radius: 20px;
+}
+
+.addpost-button:hover {
+  background-color: #14213d;
+  transform: 200ms;
+}

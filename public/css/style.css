@@ -148,15 +148,26 @@ a {
   margin: 30px 0px 0px 50px;
 }
 
-.old-post-img-container {
+.content {
   width: 350px;
   height: auto;
-  object-fit: contain;
+  overflow: hidden;
+  display: flex;
 }
 .old-post-img {
-  width: 100%;
-  height: 204px;
-  border-radius: 18px 18px 0px 0px;
+  top: 20px; /* Adjust this to position the image vertically */
+  left: 0; /* Adjust this to position the image horizontally */
+  width: auto; /* Maintain the original width of the image */
+  height: auto;
+  border-radius: 19px;
+}
+
+.old-post-titolo-data {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  align-content: space-between;
 }
 
 hr {
@@ -164,12 +175,23 @@ hr {
   background-color: red;
 }
 
-.old-post-testo {
+.old-post-titolo {
   font-family: "Poppins";
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   padding: 5px;
+  margin-top: 5px;
+}
+
+.old-post-data {
+  width: 200px;
+  text-align: end;
+  padding: 7px;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
 }
 
 .old-post-container {
@@ -185,8 +207,79 @@ hr {
 
 #left {
   width: fit-content;
+  margin-right: 150px;
 }
 
 #puzzle {
   margin-right: 50px;
+}
+
+li {
+  list-style-type: none;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+li:hover {
+  background-color: #ccc5b9;
+}
+
+.right-titoli {
+  font-family: "Poppins";
+  font-size: 24px;
+  color: #003566;
+  margin: 12px 0px 12px 0px;
+}
+
+hr {
+  margin-top: 20px;
+}
+
+#ct-link {
+  font-family: "Poppins";
+  font-size: 16px;
+}
+
+.puzzle-difficulty,
+.asolution-button {
+  font-family: "Poppins";
+}
+
+#problema {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: italic;
+}
+
+#right {
+  position: relative;
+  bottom: 5px;
+}
+
+#loginBtn {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 24px;
+  background-color: #1c3041;
+  color: whitesmoke;
+  margin: 20px 100px 200px 20px;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#loginBtn:hover {
+  background-color: rgb(46, 46, 46);
+  transition: 300ms;
+}
+
+.link-post {
+  display: flex;
+}
+
+.single-post-testo {
+  white-space: pre-wrap;
 }

@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="../js/login.js"></script>
+    <link rel="stylesheet" href="/css/login.css" />
     <title>login</title>
   </head>
   <body>
-    <form action="/admin/login" method="POST" id="loginForm">
-      <label>username</label>
-      <input type="text" name="username" />
-      <label>password</label>
-      <input type="password" name="password" />
-      <button>submit</button>
+    <div id="form-container">
+      <form action="/admin/login" method="POST" id="loginForm">
+        <label>username</label>
+        <input type="text" name="username" class="form-item" />
+        <label>password</label>
+        <input type="password" name="password" class="form-item" />
+        <button>submit</button>
 
-      <% if (wrongpassword) { %>
-      <h1><%= wrongpassword %></h1>
-      <% } %>
-    </form>
+        <% if (wrongpassword) { %>
+        <h1><%= wrongpassword %></h1>
+        <% } %>
+      </form>
+    </div>
   </body>
 </html>

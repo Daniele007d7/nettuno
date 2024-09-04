@@ -71,7 +71,7 @@ app.get("/homepage", async (req, res) => {
         path,
       };
     });
-    const oldPost = completo.slice(1, 7);
+    const oldPost = completo.slice(1, 5);
     console.log(oldPost);
     //console.log("questo è completo", completo);
 

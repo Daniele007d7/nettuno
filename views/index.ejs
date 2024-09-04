@@ -57,25 +57,23 @@
 
           <div class="old-post-container">
             <% if(oldPost){ %> <% oldPost.forEach((post =>{ %>
-            <div class="old-post">
-              <div class="old-post-img-container">
-                <img class="old-post-img" src="<%=post.path%>" alt="" />
+            <a href="/blog/<%= post.id %>" class="link-post">
+              <div class="old-post">
+                <div class="content">
+                  <img class="old-post-img" src="<%=post.path%>" alt="" />
+                  <div class="old-post-titolo-data">
+                    <div class="old-post-titolo"><%= post.titolo %></div>
+                    <div class="old-post-data"><%= post.data %></div>
+                  </div>
+                </div>
               </div>
-
-              <div class="old-post-testo"><%= post.titolo %></div>
-            </div>
+            </a>
             <% }))} %>
           </div>
-
-          <a href="./admin/login">
-            <button>
-              <% if(req.session.authorized){ %> <%="gestisci"%> <%} else{ %>
-              <%="login"%> <% } %>
-            </button></a
-          >
         </div>
       </div>
       <div id="right">
+        <h3 id="problema">PROBLEMA DEL GIORNO</h3>
         <div id="puzzle">
           <div id="puzzle-container">
             <link
@@ -96,7 +94,85 @@
             >Gioca a Scacchi Online</a
           >
         </div>
+        <div id="link-container">
+          <hr />
+          <h3 class="right-titoli">ASSOCIAZIONI</h3>
+          <div id="associazioni">
+            <ul>
+              <li>
+                <a href="https://www.arciscacchi.it/asb/"
+                  >Arci Scacchi Bolzano</a
+                >
+              </li>
+              <li>
+                <a href="https://arcoscacchi.blogspot.com/">Arcoscacchi</a>
+              </li>
+              <li>
+                <a href="http://www.arcoworldchess.com/">ArcoWorldChess</a>
+              </li>
+              <li>
+                <a href="https://www.asigc.it/"
+                  >Associazione Scacchistica Italiana Giocatori per
+                  Corrispondenza</a
+                >
+              </li>
+              <li>
+                <a href="https://www.associazionetrentinafibrosicistica.it/"
+                  >Associazione Trentina Fibrosi Cistica</a
+                >
+              </li>
+              <li>
+                <a href="https://digilander.libero.it/taioscacchi/index.html"
+                  >Circolo Castling Taio</a
+                >
+              </li>
+              <li>
+                <a href="https://www.circoloscacchirovereto.eu/"
+                  >CSR Roveresto</a
+                >
+              </li>
+              <li>
+                <a href="http://www.schachbund.it/">Südtiroler Schachbund</a>
+              </li>
+              <li>
+                <a href="http://www.chessclub.it/">Schachklub Kaltern</a>
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <h3 class="right-titoli">BLOG</h3>
+          <div id="blog">
+            <ul>
+              <li>
+                <a href="https://www.scacchierando.it/">Scacchierando</a>
+              </li>
+              <li>
+                <a href="https://www.messaggeroscacchi.it/"
+                  >Messagero Scacchi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <h3 class="right-titoli">TORNEI/SITI INTERNAZIONALI</h3>
+          <div id="tornei/siti internazionali">
+            <ul>
+              <li><a href="https://vesus.org/">Vesus</a></li>
+              <li><a href="https://en.chessbase.com/">Chessbase</a></li>
+              <li><a href="https://www.chess.com/">chess.com</a></li>
+              <li><a href="https://lichess.org/">lichess.org</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
+    <div id="btn-container">
+      <a href="./admin/login">
+        <button id="loginBtn">
+          <% if(req.session.authorized){ %> <%="gestisci"%> <%} else{ %>
+          <%="login"%> <% } %>
+        </button></a
+      >
     </div>
   </body>
 </html>
