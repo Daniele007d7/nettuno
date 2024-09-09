@@ -5,13 +5,18 @@
   margin-bottom: 50px;
 }
 
-#addpost-title {
+#addpost-title,
+#title {
   justify-content: center;
   margin: auto;
   font-family: "Poppins";
   font-weight: bold;
   font-size: 48px;
   color: #03045e;
+}
+#title {
+  text-align: center;
+  padding: 8px;
 }
 
 #datomancante {
@@ -27,6 +32,7 @@ form {
   margin: auto;
   font-family: "Poppins";
   font-size: 28px;
+  margin-bottom: 200px;
 }
 
 textarea {
@@ -53,4 +59,45 @@ textarea {
 .addpost-button:hover {
   background-color: #14213d;
   transform: 200ms;
+}
+
+#postn {
+  text-align: center;
+  font-size: 36px;
+  margin: 0px;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+#removeBtn,
+#applica {
+  width: 40%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+#removeBtn {
+  background-color: #d62828;
+  color: #f2e8cf;
+}
+
+#removeBtn:hover {
+  background-color: #6f1d1b;
+  color: #ffe6a7;
+  transition: 400ms;
+}
+
+#applica {
+  background-color: #386641;
+  color: #f2e8cf;
+}
+
+#applica:hover {
+  background-color: #132a13;
+  color: #ffe6a7;
+  transition: 400ms;
 }

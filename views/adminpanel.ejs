@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin panel</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/adminpanel.css" />
   </head>
   <body>
-    <h1>admin panel</h1>
-    <a href="/addpost"> <button>torna indietro</button></a>
+    <div id="header-container">
+      <a href="/homepage"
+        ><button class="addpost-button">← HOMEPAGE</button>
+      </a>
+      <h1 id="addpost-title">ADMIN PANEL</h1>
+
+      <a href="/addpost">
+        <button class="addpost-button">NUOVO POST</button>
+      </a>
+    </div>
 
     <% if(adminPanelPosts){ %> <% adminPanelPosts.forEach(adminPanelPost =>{ %>
 
     <div class="admin-panel-post-container">
-      <h3><%= adminPanelPost.id %></h3>
-      <h3><%= adminPanelPost.titolo %></h3>
-      <h3><%= adminPanelPost.data %></h3>
-      <a href="/admin/modifica/<%=adminPanelPost.id %>"
-        ><button>modifica</button></a
-      >
+      <div class="content">
+        <h3 class="id">N° DATABASE: <%= adminPanelPost.id %></h3>
+        <h3 class="title"><%= adminPanelPost.titolo %></h3>
+        <h3 class="data"><%= adminPanelPost.data %></h3>
+        <a href="/admin/modifica/<%=adminPanelPost.id %>"
+          ><button class="modifica">modifica</button></a
+        >
+      </div>
     </div>
     <% })}%>
   </body>

@@ -4,23 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>modifica blog</title>
+    <link rel="stylesheet" href="/css/addpost.css" />
   </head>
   <body>
+    <h1 id="title">MODIFICA</h1>
     <form action="/admin/modifica/<%= id %>" method="POST">
-      <h1>modifica</h1>
-      <h3>post n. <%= id %></h3>
+      <h3 id="postn">post n. <%= id %></h3>
       <label>data</label>
-      <input type="date" value="<%= data %>" name="data" />
+      <input type="date" value="<%= data %>" name="data" class="input" />
       <label>titolo</label>
-      <input type="text" value="<%= titolo %>" name="titolo" />
+      <input type="text" value="<%= titolo %>" name="titolo" class="input" />
       <label> testo</label>
-      <textarea name="testo"><%= testo %></textarea>
-      <button>applica</button>
+      <textarea name="testo" class="input"><%= testo %></textarea>
+      <div id="btn-container">
+        <button id="removeBtn" class="input" data-doc="<%= id %>">
+          cancella post
+        </button>
+        <button id="applica" class="input">applica</button>
+      </div>
     </form>
-    <button class="removeBtn" data-doc="<%= id %>">cancella post</button>
 
     <script>
-      const removePost = document.querySelector(".removeBtn");
+      const removePost = document.querySelector("#removeBtn");
       removePost.addEventListener("click", (e) => {
         e.preventDefault();
 
