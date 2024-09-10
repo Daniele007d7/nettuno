@@ -279,3 +279,9 @@ hr {
 .single-post-testo {
   white-space: pre-wrap;
 }
+
+.info:hover {
+  background-color: #03045e;
+  color: antiquewhite;
+  transition: 300ms;
+}
