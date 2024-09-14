@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aggiungi un post</title>
     <link rel="stylesheet" href="/css/addpost.css" />
+    <script
+      src="https://cdn.tiny.cloud/1/qfoememte3ekk1v8r06vk6sjfcvh3p9ki4pryzep65e7902x/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script>
+      tinymce.init({
+        selector: "#textarea",
+      });
+      // Get the HTML contents of the currently active editor
+      console.debug(tinymce.activeEditor.getContent());
+
+      // Get the contents of the currently active editor as plain text
+      tinymce.activeEditor.getContent({ format: "text" });
+
+      // Get content of a specific editor:
+      tinymce.get("content id").getContent();
+    </script>
   </head>
   <body>
     <div id="header-container">
@@ -26,7 +43,7 @@
       <label>data</label>
       <input type="date" name="data" class="input" />
       <label>testo</label>
-      <textarea name="testo" class="input"></textarea>
+      <textarea name="testo" class="input" id="textarea"></textarea>
 
       <label>foto</label>
       <input

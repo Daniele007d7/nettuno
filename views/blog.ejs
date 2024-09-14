@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blog</title>
     <link rel="stylesheet" href="/css/blog.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <%- include('../partials/header.ejs') %>
     <h3 id="titolo"><%=titolo %></h3>
 
     <h3 id="data"><%=data %></h3>
@@ -19,6 +21,6 @@
 
     <h3 id="testo"><%=testo %></h3>
 
-    <% } %>
+    <% } %> <%- include('../partials/footer.ejs') %>
   </body>
 </html>

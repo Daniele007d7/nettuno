@@ -114,17 +114,17 @@ app.get("/blog/:id", async (req, res) => {
 
 // Chi siamo
 app.use("/chi-siamo", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "chi-siamo.html"));
+  res.render("chi-siamo");
 });
 
 // Dove siamo
 app.use("/dove-siamo", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "dove.html"));
+  res.render("dove");
 });
 
 // orari di apertura
 app.use("/orari-apertura", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "orari.html"));
+  res.render("orari");
 });
 // Route addpost
 app.use("/addpost", addpostRoutes);
