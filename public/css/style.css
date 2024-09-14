@@ -6,19 +6,36 @@ body {
 }
 
 .homepage-post-container {
-  background-color: rgb(245, 244, 208);
+  background-color: #fefae0;
   margin: 20px, 0px 10px 10px;
   width: 800px;
   margin-left: 50px;
-  border: solid 3px black;
+  border: solid 1px black;
   border-radius: 50px;
+}
+
+#img-container {
+  width: 300px;
+  height: 200px;
+  margin: 30px 40px 20px 25px;
 }
 
 .immagini {
   width: 300px;
-  height: auto;
-  margin-top: 30px;
+  height: 100%;
+
   border-radius: 20px;
+}
+
+.old-post-img-container {
+  width: 160px;
+  height: 160px;
+}
+
+.old-post-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 19px 0px 0px 19px;
 }
 
 .homepage-post-container:hover {
@@ -34,11 +51,6 @@ a {
 
 .imgContainer-single-post {
   display: flex;
-}
-
-.imgCompletePost {
-  width: 30vh;
-  height: auto;
 }
 
 #nettuno-scacchi {
@@ -92,6 +104,7 @@ a {
   font-size: 30px;
   padding: 8px;
   text-align: center;
+  align-content: center;
   color: #1d3557;
 }
 
@@ -101,13 +114,12 @@ a {
   font-size: 20px;
   padding: 0px 25px 10px 25px;
   color: rgb(44, 44, 44);
-  margin-top: 30px;
+  margin: 20px 0px 10px 0px;
 }
 
 .img-title {
-  margin: 15px 0px 10px 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .titolo-testo {
@@ -117,7 +129,7 @@ a {
 .data-post {
   text-align: end;
   font-style: italic;
-  margin-right: 20px;
+  margin: 0px 20px 10px 0px;
 }
 
 #ultime-notizie {
@@ -140,7 +152,7 @@ a {
   height: auto;
   display: flex;
   flex-direction: column;
-  border: solid 2px black;
+  border: solid 1px black;
   border-radius: 20px;
   margin: 30px 0px 0px 50px;
 }
@@ -150,13 +162,6 @@ a {
   height: auto;
   overflow: hidden;
   display: flex;
-}
-.old-post-img {
-  top: 20px; /* Adjust this to position the image vertically */
-  left: 0; /* Adjust this to position the image horizontally */
-  width: auto; /* Maintain the original width of the image */
-  height: auto;
-  border-radius: 19px 2px 2px 19px;
 }
 
 .old-post-titolo-data {

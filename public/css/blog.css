@@ -27,10 +27,31 @@
   margin-left: 100px;
 }
 
-#testo {
+#testo-container {
   font-family: "Poppins";
-  font-size: 35px;
-  font-weight: 400;
-  margin: 100px 40px 20px 40px;
+  font-size: 24px;
+  font-weight: 300;
+  width: 700px;
+  margin: auto;
   white-space: pre-wrap;
+}
+
+.wp-block-image {
+  max-width: 700px;
+}
+
+img,
+figure,
+p {
+  margin: 0px;
+}
+#testo-container .wp-block-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+#testo-container img[src*="notoemoji"] {
+  width: auto;
+  max-width: none;
 }

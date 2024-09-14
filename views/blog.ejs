@@ -12,15 +12,8 @@
     <h3 id="titolo"><%=titolo %></h3>
 
     <h3 id="data"><%=data %></h3>
+    <div id="content"><div id="testo-container"><%- testo %></div></div>
 
-    <%if(post){ %> <% if(path){ %>
-    <div>
-      <% path.forEach(immagine=>{ %> <img src="<%= ("/", immagine) %>"
-      class="imgCompletePost"> <% })} %>
-    </div>
-
-    <h3 id="testo"><%=testo %></h3>
-
-    <% } %> <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
   </body>
 </html>

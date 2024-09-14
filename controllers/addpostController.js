@@ -71,6 +71,8 @@ const newPost = async (req, res) => {
           file.path,
         ]);
       });
+
+      console.log("questo è il typeof del testo:", typeof req.body.testo);
       res.redirect("/homepage");
     } else {
       res.render("addPost", {

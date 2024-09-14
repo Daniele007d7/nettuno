@@ -18,16 +18,18 @@
           <a href="/blog/<%= completo[0].id  %>">
             <div class="homepage-post-container" id="<%= completo[0].id %>">
               <div class="img-title">
-                <img
-                  class="immagini"
-                  src="<%=
-                       completo[0].path %>"
-                />
+                <div id="img-container">
+                  <img
+                    class="immagini"
+                    src="<%=
+                         completo[0].path %>"
+                  />
+                </div>
 
                 <h3 class="titolo-post"><%=completo[0].titolo %></h3>
               </div>
               <h3 class="testo-post">
-                <%=completo[0].testo.slice(0,140) + "..." %>
+                <%-completo[0].testo.slice(0,170) + "..." %>
               </h3>
 
               <h3 class="data-post"><%=completo[0].data %></h3>
@@ -40,9 +42,12 @@
             <a href="/blog/<%= post.id %>" class="link-post">
               <div class="old-post">
                 <div class="content">
-                  <img class="old-post-img" src="<%=post.path%>" alt="" />
+                  <div class="old-post-img-container">
+                    <img class="old-post-img" src="<%=post.path%>" alt="" />
+                  </div>
+
                   <div class="old-post-titolo-data">
-                    <div class="old-post-titolo"><%= post.titolo %></div>
+                    <div class="old-post-titolo"><%- post.titolo %></div>
                     <div class="old-post-data"><%= post.data %></div>
                   </div>
                 </div>
