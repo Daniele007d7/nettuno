@@ -68,7 +68,7 @@ const check_login = (req, res) => {
 const render_panel = async (req, res) => {
   if (req.session.authorized) {
     const [adminPanelPosts] = await pool.query(
-      "SELECT id, titolo, data FROM post"
+      "SELECT id, titolo, data FROM post ORDER BY id DESC"
     );
 
     res.render("adminpanel", {

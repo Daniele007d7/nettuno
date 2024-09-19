@@ -42,11 +42,6 @@
           input.click();
         },
       });
-
-      // Call uploadImages before submitting the form
-      tinymce.activeEditor.uploadImages().then(() => {
-        document.forms[0].submit();
-      });
     </script>
   </head>
   <body>
@@ -63,7 +58,12 @@
     <% if(datomancante){ %>
     <h1 id="datomancante"><%= datomancante%></h1>
     <% } %>
-    <form action="/addpost" enctype="multipart/form-data" method="POST">
+    <form
+      id="myform"
+      action="/addpost"
+      enctype="multipart/form-data"
+      method="POST"
+    >
       <label>titolo</label>
       <input type="text" name="titolo" class="input" />
       <label>data</label>
