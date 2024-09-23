@@ -4,6 +4,12 @@ const router = express.Router();
 
 import mysql from "mysql2/promise";
 import session from "express-session";
+import "dotenv/config";
+
+const host_name = process.env.HOST_NAME;
+const user_name = process.env.USER_NAME;
+const db_name = process.env.DB_NAME;
+const db_pass = process.env.DB_PASSWORD;
 
 const app = express();
 
@@ -27,12 +33,12 @@ app.use(
 
 // Connecting DB
 const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  database: "login",
+  host: host_name,
+  user: user_name,
+  database: db_name,
   waitForConnections: true,
   connectionLimit: 10,
-  password: "*",
+  password: db_pass,
 });
 
 const render_login = (req, res) => {

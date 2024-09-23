@@ -7,6 +7,13 @@ import addpostRoutes from "./routes/addpostRoute.js";
 
 import path from "path";
 
+import "dotenv/config";
+
+const host_name = process.env.HOST_NAME;
+const user_name = process.env.USER_NAME;
+const db_name = process.env.DB_NAME;
+const db_pass = process.env.DB_PASSWORD;
+
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -34,12 +41,12 @@ app.use(
 
 // Connecting DB
 const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  database: "login",
+  host: host_name,
+  user: user_name,
+  database: db_name,
   waitForConnections: true,
   connectionLimit: 10,
-  password: "*",
+  password: db_pass,
 });
 
 // Route Homepage
