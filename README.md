@@ -7,7 +7,7 @@ const user_name
 const db_name
 const db_pass
 
-with the data of your DB and remove
+with the data of your DB and remove:
 
 import "dotenv/config";
 
